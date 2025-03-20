@@ -1,0 +1,453 @@
+/* CSS Variables for UConn Colors */
+:root {
+  --uconn-blue: #000E2F;
+  --uconn-red: #E31837;
+  --uconn-gray: #7C878E;
+  --data-science-blue: #1E88E5;
+  --data-science-green: #43A047;
+}
+
+/* CSS code * --- RESET & GLOBAL STYLES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+/* --- GLOBAL BACKGROUND --- */
+body {
+  background-color: #f8f9fa;
+  color: var(--uconn-blue);
+  margin: 0;
+  padding: 0;
+  background-image: url('https://files.oaiusercontent.com/file-2N5JVs27FhejznpEqRWf5T?se=2025-03-19T05%3A46%3A22Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D9a6a81e9-604f-456c-81fb-ec2376fdbf9d.webp&sig=aoAUqO2nQCBAYUG7rT15WY59wZLgKQ%2Bx9iTdMl4Y%2BxA%3D');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Container for main content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* --- OVERLAY FOR BETTER READABILITY --- */
+.section-bg {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 1000px;
+  text-align: center;
+  width: 100%;
+}
+
+/* --- NAVIGATION --- */
+header {
+  background: linear-gradient(to right, var(--uconn-blue), var(--uconn-red));
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--uconn-blue), var(--uconn-red));
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--uconn-red), transparent);
+  border-radius: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--uconn-red);
+  transform: translateY(-2px);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to right, var(--uconn-blue), var(--uconn-red));
+  padding: 4rem 2rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+/* Semi-transparent overlay for the hero section */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background-color: white;
+  color: var(--uconn-red);
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.hero-btn:hover {
+  background-color: var(--uconn-red);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* --- SECTION HEADINGS --- */
+section h2 {
+  color: var(--uconn-blue);
+  border-bottom: 2px solid var(--uconn-red);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* --- PROJECTS SECTION --- */
+.projects-section .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #58a6ff;
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.project-card p {
+  margin-bottom: 0.5rem;
+}
+
+/* --- SKILLS SECTION --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-category {
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 250px;
+}
+
+.skill-category h3 {
+  color: var(--uconn-blue);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category li {
+  margin: 0.5rem 0;
+  color: var(--uconn-gray);
+}
+
+/* --- EXPERIENCE SECTION --- */
+.experience-item {
+  margin-bottom: 1.5rem;
+}
+
+.experience-item h3 {
+  font-size: 1.2rem;
+  color: #58a6ff;
+}
+
+.experience-item h4 {
+  margin: 0.3rem 0;
+  font-style: italic;
+  color: #333;
+}
+
+.experience-item ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* --- EDUCATION SECTION --- */
+.education-details h3 {
+  margin-bottom: 0.5rem;
+  color: #58a6ff;
+}
+
+.education-details ul {
+  list-style-type: square;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* --- CERTIFICATIONS SECTION --- */
+.cert-section .row {
+  margin-bottom: 2rem;
+}
+
+.cert-section .row:last-child {
+  margin-bottom: 0;
+}
+
+.certification-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 1rem auto;
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 400px;
+  transition: transform 0.3s ease;
+}
+
+.certification-card:hover {
+  transform: translateY(-5px);
+}
+
+.certification-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.certification-card h5 {
+  color: var(--uconn-blue);
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.certification-card p {
+  color: var(--uconn-gray);
+  margin-top: 0.5rem;
+}
+
+/* --- RESUME SECTION --- */
+.resume-section {
+  text-align: center;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #58a6ff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.resume-btn:hover {
+  background-color: #79c0ff;
+}
+
+/* --- CONTACT SECTION --- */
+.contact-section {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.contact-section a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, var(--uconn-blue), var(--uconn-red));
+  color: white;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--uconn-red);
+}
+
+.project-item {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.project-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-section a {
+  color: #4a90e2;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-section a:hover {
+  color: #2867B2; /* Darker blue for hover effect */
+  text-decoration: underline;
+}
+
+.resume-btn {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.resume-btn:hover {
+  background-color: #2867B2;
+  transform: scale(1.05); /* Slight pop effect */
+}
+
+@media (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cert-section .row {
+    margin-bottom: 1rem;
+  }
+  
+  .certification-card {
+    margin: 0.5rem auto;
+  }
+}
